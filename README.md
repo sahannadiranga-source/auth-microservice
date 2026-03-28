@@ -22,7 +22,7 @@ ORM: Entity Framework Core
 Setup Instructions
 
 1. Clone the repository
-git clone https://github.com/your-username/mini-auth-service.git
+git clone https://github.com/sahannadiranga-source/auth-microservice.git
 2. Navigate to the project
 cd mini-auth-service
 3. Configure Database
