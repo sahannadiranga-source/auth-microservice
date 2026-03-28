@@ -1,0 +1,32 @@
+# Build results
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio files
+.vs/
+
+# Logs
+*.log
+
+# ASP.NET Core
+appsettings.Development.json
+appsettings.json
+
+# Secrets (VERY IMPORTANT)
+secrets.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Publish folder
+publish/
+
+# Docker (if you add later)
+docker-compose.override.yml

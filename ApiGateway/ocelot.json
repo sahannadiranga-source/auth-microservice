@@ -1,0 +1,31 @@
+﻿{
+	"Routes": [
+		{
+			"DownstreamPathTemplate": "/api/auth/{everything}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "authservice",
+					"Port": 80
+				}
+			],
+			"UpstreamPathTemplate": "/auth/{everything}",
+			"UpstreamHttpMethod": [ "GET", "POST" ]
+		},
+		{
+			"DownstreamPathTemplate": "/api/profile/{everything}",
+			"DownstreamScheme": "http",
+			"DownstreamHostAndPorts": [
+				{
+					"Host": "profileservice",
+					"Port": 80
+				}
+			],
+			"UpstreamPathTemplate": "/profile/{everything}",
+			"UpstreamHttpMethod": [ "GET", "POST" ]
+		}
+	],
+	"GlobalConfiguration": {
+		"BaseUrl": "http://apigateway"
+	}
+}
