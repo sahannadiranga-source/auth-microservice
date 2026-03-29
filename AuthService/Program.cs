@@ -6,7 +6,7 @@ using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseUrls("http://0.0.0.0:80");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -44,13 +44,14 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+// Auto-create/migrate the database on startup
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.EnsureCreated();
+}
+
 app.UseAuthentication();
-app.UseAuthorization();
-
-// Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
